@@ -8,32 +8,35 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+    <context:component-scan base-package="com.home"/>
 
-    <bean id="classicBean"
-          class="com.home.ClassicalMusic">
-    </bean>
+<!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
 
-    <bean id="rockBean"
-          class="com.home.RockMusic">
-    </bean>
+<!--    <bean id="classicBean"-->
+<!--          class="com.home.ClassicalMusic">-->
+<!--    </bean>-->
 
-    <bean id="popBean"
-          class="com.home.PopMusic">
-    </bean>
+<!--    <bean id="rockBean"-->
+<!--          class="com.home.RockMusic">-->
+<!--    </bean>-->
 
-    <util:list id="musics" value-type="com.home.Music">
-        <ref bean="classicBean"/>
-        <ref bean="rockBean"/>
-        <ref bean="popBean"/>
-    </util:list>
+<!--    <bean id="popBean"-->
+<!--          class="com.home.PopMusic">-->
+<!--    </bean>-->
 
-    <bean id="musicPlayer"
-          class="com.home.MusicPlayer">
-        <property name="musicList" ref="musics"/>
+<!--    <util:list id="musics" value-type="com.home.Music">-->
+<!--        <ref bean="classicBean"/>-->
+<!--        <ref bean="rockBean"/>-->
+<!--        <ref bean="popBean"/>-->
+<!--    </util:list>-->
 
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--          class="com.home.MusicPlayer"-->
+<!--          scope="prototype">-->
+<!--        <property name="musicList" ref="musics"/>-->
+
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>

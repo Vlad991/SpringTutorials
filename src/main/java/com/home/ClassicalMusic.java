@@ -1,6 +1,14 @@
 package com.home;
 
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
+
+@Component
 public class ClassicalMusic implements Music {
+
+//    public static ClassicalMusic getClassicalMusic() {  //for scope Singleton spring do getClassicalMusic() method only one time, and saves this object
+//        return new ClassicalMusic();
+//    }
 
     public void doMyInit() {
         System.out.println("Doing my initialization");
