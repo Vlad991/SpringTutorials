@@ -11,7 +11,10 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="classicBean"
-          class="com.home.ClassicalMusic">
+          class="com.home.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          scope="prototype">
     </bean>
 
     <bean id="rockBean"
@@ -29,7 +32,8 @@
     </util:list>
 
     <bean id="musicPlayer"
-          class="com.home.MusicPlayer">
+          class="com.home.MusicPlayer"
+          scope="prototype">
         <property name="musicList" ref="musics"/>
 
         <property name="name" value="${musicPlayer.name}"/>
