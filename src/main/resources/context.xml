@@ -11,26 +11,23 @@
 
     <bean id="t1000"
           class="com.roman_brovko_tutorials.robot.ModelT1000"
-          p:hand-ref="toshibaHand"
-          p:leg-ref="toshibaLeg"
-          p:head-ref="sonyHead">
-<!--        <constructor-arg ref="sonyHand"/>-->
-<!--        <constructor-arg ref="sonyLeg"/>-->
-<!--        <constructor-arg ref="sonyHead"/>-->
-        <constructor-arg index="2" value="true" type="boolean"/>
-        <constructor-arg index="1" value="2005" type="int"/>
-        <constructor-arg index="0" value="silver" type="java.lang.String"/>
+          parent="baseModel">
 
-<!--        <property name="hand" ref="toshibaHand"/>-->
-<!--        <property name="leg" ref="toshibaLeg"/>-->
-<!--        <property name="head" ref="toshibaHead"/>-->
+        <constructor-arg index="3" value="silver" type="java.lang.String"/>
+        <constructor-arg index="4" value="2005" type="int"/>
+        <constructor-arg index="5" value="true" type="boolean"/>
+
+        <property name="hand" ref="sonyHand"/>
+
     </bean>
 
-    <bean id="t1000Empty" class="com.roman_brovko_tutorials.robot.ModelT1000">
+    <bean id="baseModel" abstract="true">
 
-        <constructor-arg ref="sonyHand"/>
-        <constructor-arg ref="toshibaLeg"/>
-        <constructor-arg ref="sonyHead"/>
+        <constructor-arg ref="sonyHand" index="0"/>
+        <constructor-arg ref="toshibaLeg" index="1"/>
+        <constructor-arg ref="sonyHead" index="2"/>
+
+        <property name="hand" ref="toshibaHand"/>
 
     </bean>
 
@@ -41,5 +38,7 @@
     <bean id="toshibaHand" class="com.roman_brovko_tutorials.toshiba.ToshibaHand"/>
     <bean id="toshibaLeg" class="com.roman_brovko_tutorials.toshiba.ToshibaLeg"/>
     <bean id="toshibaHead" class="com.roman_brovko_tutorials.toshiba.ToshibaHead"/>
+
+    <bean id="databaseBean" class="com.roman_brovko_tutorials.database.Database"/>
 
 </beans>

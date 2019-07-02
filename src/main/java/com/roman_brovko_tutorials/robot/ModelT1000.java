@@ -3,13 +3,8 @@ package com.roman_brovko_tutorials.robot;
 import com.roman_brovko_tutorials.interfaces.Hand;
 import com.roman_brovko_tutorials.interfaces.Head;
 import com.roman_brovko_tutorials.interfaces.Leg;
-import com.roman_brovko_tutorials.interfaces.Robot;
 
-public class ModelT1000 implements Robot {
-    private Hand hand;
-    private Leg leg;
-    private Head head;
-
+public class ModelT1000 extends BaseModel {
     private String color;
     private int year;
     private boolean soundEnabled;
@@ -18,9 +13,7 @@ public class ModelT1000 implements Robot {
     }
 
     public ModelT1000(Hand hand, Leg leg, Head head) {
-        this.hand = hand;
-        this.leg = leg;
-        this.head = head;
+        super(hand, leg, head);
     }
 
     public ModelT1000(String color, int year, boolean soundEnabled) {
@@ -30,9 +23,7 @@ public class ModelT1000 implements Robot {
     }
 
     public ModelT1000(Hand hand, Leg leg, Head head, String color, int year, boolean soundEnabled) {
-        this.hand = hand;
-        this.leg = leg;
-        this.head = head;
+        super(hand, leg, head);
         this.color = color;
         this.year = year;
         this.soundEnabled = soundEnabled;
@@ -40,9 +31,9 @@ public class ModelT1000 implements Robot {
 
     @Override
     public void action() {
-        hand.catchSomething();
-        leg.go();
-        head.calc();
+        getHand().catchSomething();
+        getLeg().go();
+        getHead().calc();
         System.out.println("color: " + color);
         System.out.println("year: " + year);
         System.out.println("can play sound: " + soundEnabled);
@@ -51,30 +42,6 @@ public class ModelT1000 implements Robot {
     @Override
     public void dance() {
         System.out.println("T1000 id dancing!");
-    }
-
-    public Hand getHand() {
-        return hand;
-    }
-
-    public void setHand(Hand hand) {
-        this.hand = hand;
-    }
-
-    public Leg getLeg() {
-        return leg;
-    }
-
-    public void setLeg(Leg leg) {
-        this.leg = leg;
-    }
-
-    public Head getHead() {
-        return head;
-    }
-
-    public void setHead(Head head) {
-        this.head = head;
     }
 
     public String getColor() {
@@ -101,15 +68,12 @@ public class ModelT1000 implements Robot {
         this.soundEnabled = soundEnabled;
     }
 
-    @Override
-    public String toString() {
-        return "ModelT1000{" +
-                "hand=" + hand +
-                ", leg=" + leg +
-                ", head=" + head +
-                ", color='" + color + '\'' +
-                ", year=" + year +
-                ", soundEnabled=" + soundEnabled +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return super.toString() + "ModelT1000{" +
+//                "color='" + color + '\'' +
+//                ", year=" + year +
+//                ", soundEnabled=" + soundEnabled +
+//                '}';
+//    }
 }
