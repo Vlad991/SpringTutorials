@@ -13,14 +13,9 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
 
-        RobotConveyor t1000Conveyor = context.getBean("t1000Conveyor", RobotConveyor.class);
+        Robot t1000 = context.getBean("t1000", Robot.class);
 
-        Robot terminator1 = t1000Conveyor.createRobot();
-        Robot terminator2 = t1000Conveyor.createRobot();
-        Robot terminator3 = t1000Conveyor.createRobot();
+        t1000.action();
 
-        System.out.println("terminator1 " + terminator1);
-        System.out.println("terminator2 " + terminator2);
-        System.out.println("terminator3 " + terminator3);
     }
 }

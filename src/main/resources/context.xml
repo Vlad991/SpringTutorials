@@ -17,23 +17,13 @@
     <bean id="t1000"
           class="com.roman_brovko_tutorials.robot.ModelT1000"
           parent="baseModel"
-          scope="prototype">
-
-        <constructor-arg index="3" value="silver" type="java.lang.String"/>
-        <constructor-arg index="4" value="2005" type="int"/>
-        <constructor-arg index="5" value="true" type="boolean"/>
-
-        <property name="hand" ref="sonyHand"/>
+          scope="prototype"
+          autowire="byType">
 
     </bean>
 
-    <bean id="baseModel" abstract="true">
-
-        <constructor-arg ref="sonyHand" index="0"/>
-        <constructor-arg ref="toshibaLeg" index="1"/>
-        <constructor-arg ref="sonyHead" index="2"/>
-
-        <property name="hand" ref="toshibaHand"/>
+    <bean id="baseModel"
+          abstract="true">
 
     </bean>
 
@@ -41,9 +31,9 @@
     <bean id="sonyLeg" class="com.roman_brovko_tutorials.sony.SonyLeg"/>
     <bean id="sonyHead" class="com.roman_brovko_tutorials.sony.SonyHead"/>
 
-    <bean id="toshibaHand" class="com.roman_brovko_tutorials.toshiba.ToshibaHand"/>
-    <bean id="toshibaLeg" class="com.roman_brovko_tutorials.toshiba.ToshibaLeg"/>
-    <bean id="toshibaHead" class="com.roman_brovko_tutorials.toshiba.ToshibaHead"/>
+    <bean id="toshibaHand" class="com.roman_brovko_tutorials.toshiba.ToshibaHand" autowire-candidate="false"/>
+    <bean id="toshibaLeg" class="com.roman_brovko_tutorials.toshiba.ToshibaLeg" autowire-candidate="false"/>
+    <bean id="toshibaHead" class="com.roman_brovko_tutorials.toshiba.ToshibaHead" autowire-candidate="false"/>
 
     <bean id="databaseBean" class="com.roman_brovko_tutorials.database.Database"/>
 

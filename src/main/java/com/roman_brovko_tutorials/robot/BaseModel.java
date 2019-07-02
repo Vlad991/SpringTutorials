@@ -4,6 +4,7 @@ import com.roman_brovko_tutorials.interfaces.Hand;
 import com.roman_brovko_tutorials.interfaces.Head;
 import com.roman_brovko_tutorials.interfaces.Leg;
 import com.roman_brovko_tutorials.interfaces.Robot;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class BaseModel implements Robot {
     private Hand hand;
