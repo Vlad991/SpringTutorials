@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
 
-        Robot modelT1000 = context.getBean("t1000", ModelT1000.class);
+        Robot modelT1000 = context.getBean("t1000Empty", ModelT1000.class);
 
         modelT1000.action();
     }
