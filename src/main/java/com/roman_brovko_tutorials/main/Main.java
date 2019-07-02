@@ -1,6 +1,7 @@
 package com.roman_brovko_tutorials.main;
 
 import com.roman_brovko_tutorials.interfaces.Robot;
+import com.roman_brovko_tutorials.interfaces.RobotConveyor;
 import com.roman_brovko_tutorials.robot.ModelT1000;
 import com.roman_brovko_tutorials.sony.SonyHand;
 import com.roman_brovko_tutorials.sony.SonyHead;
@@ -12,8 +13,14 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
 
-        Robot modelT1000 = context.getBean("t1000", ModelT1000.class);
+        RobotConveyor t1000Conveyor = context.getBean("t1000Conveyor", RobotConveyor.class);
 
-        modelT1000.action();
+        Robot terminator1 = t1000Conveyor.createRobot();
+        Robot terminator2 = t1000Conveyor.createRobot();
+        Robot terminator3 = t1000Conveyor.createRobot();
+
+        System.out.println("terminator1 " + terminator1);
+        System.out.println("terminator2 " + terminator2);
+        System.out.println("terminator3 " + terminator3);
     }
 }
