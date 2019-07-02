@@ -1,7 +1,4 @@
-package com.home;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.neil_tutorials;
 
 public class MusicPlayer {
 //    private List<Music> musicList = new ArrayList<>();

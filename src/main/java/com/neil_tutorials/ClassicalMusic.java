@@ -1,6 +1,5 @@
-package com.home;
+package com.neil_tutorials;
 
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 @Component

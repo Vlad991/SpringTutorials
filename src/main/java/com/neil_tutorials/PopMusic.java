@@ -1,4 +1,4 @@
-package com.home;
+package com.neil_tutorials;
 
 public class PopMusic implements Music {
     @Override

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="t1000"
+          class="com.roman_brovko_tutorials.robot.ModelT1000">
+        <constructor-arg ref="sonyHand"/>
+        <constructor-arg ref="sonyLeg"/>
+        <constructor-arg ref="sonyHead"/>
+
+        <property name="hand" ref="toshibaHand"/>
+        <property name="leg" ref="toshibaLeg"/>
+    </bean>
+
+    <bean id="sonyHand" class="com.roman_brovko_tutorials.sony.SonyHand"/>
+    <bean id="sonyLeg" class="com.roman_brovko_tutorials.sony.SonyLeg"/>
+    <bean id="sonyHead" class="com.roman_brovko_tutorials.sony.SonyHead"/>
+
+    <bean id="toshibaHand" class="com.roman_brovko_tutorials.toshiba.ToshibaHand"/>
+    <bean id="toshibaLeg" class="com.roman_brovko_tutorials.toshiba.ToshibaLeg"/>
+    <bean id="toshibaHead" class="com.roman_brovko_tutorials.toshiba.ToshibaHead"/>
+
+</beans>
