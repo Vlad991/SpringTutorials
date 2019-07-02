@@ -12,10 +12,6 @@ public class ModelT1000 extends BaseModel {
     public ModelT1000() {
     }
 
-    public ModelT1000(Hand hand, Leg leg, Head head) {
-        super(hand, leg, head);
-    }
-
     public ModelT1000(String color, int year, boolean soundEnabled) {
         this.color = color;
         this.year = year;
@@ -23,7 +19,7 @@ public class ModelT1000 extends BaseModel {
     }
 
     public ModelT1000(Hand hand, Leg leg, Head head, String color, int year, boolean soundEnabled) {
-        super(hand, leg, head);
+        super();
         this.color = color;
         this.year = year;
         this.soundEnabled = soundEnabled;
@@ -67,13 +63,4 @@ public class ModelT1000 extends BaseModel {
     public void setSoundEnabled(boolean soundEnabled) {
         this.soundEnabled = soundEnabled;
     }
-
-//    @Override
-//    public String toString() {
-//        return super.toString() + "ModelT1000{" +
-//                "color='" + color + '\'' +
-//                ", year=" + year +
-//                ", soundEnabled=" + soundEnabled +
-//                '}';
-//    }
 }

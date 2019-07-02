@@ -10,26 +10,24 @@
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
 
-    <bean id="t1000Conveyor" class="com.roman_brovko_tutorials.conveyor.T1000Conveyor">
-        <lookup-method name="createRobot" bean="t1000"/>
-    </bean>
+    <context:annotation-config />
 
     <bean id="t1000"
           class="com.roman_brovko_tutorials.robot.ModelT1000"
-          parent="baseModel"
-          scope="prototype"
-          autowire="byType">
+          scope="prototype">
 
     </bean>
 
-    <bean id="baseModel"
-          abstract="true">
-
+    <bean class="com.roman_brovko_tutorials.sony.SonyHand">
+        <property name="color" value="golden"/>
+        <qualifier value="sonyGoldenHand"/>
     </bean>
-
-    <bean id="sonyHand" class="com.roman_brovko_tutorials.sony.SonyHand"/>
-    <bean id="sonyLeg" class="com.roman_brovko_tutorials.sony.SonyLeg"/>
-    <bean id="sonyHead" class="com.roman_brovko_tutorials.sony.SonyHead"/>
+    <bean class="com.roman_brovko_tutorials.sony.SonyHand">
+        <property name="color" value="bronze"/>
+        <qualifier value="sonyBronzeHand"/>
+    </bean>
+    <bean id="sonyLeg" class="com.roman_brovko_tutorials.sony.SonyLeg" />
+    <bean id="sonyHead" class="com.roman_brovko_tutorials.sony.SonyHead" />
 
     <bean id="toshibaHand" class="com.roman_brovko_tutorials.toshiba.ToshibaHand" autowire-candidate="false"/>
     <bean id="toshibaLeg" class="com.roman_brovko_tutorials.toshiba.ToshibaLeg" autowire-candidate="false"/>
