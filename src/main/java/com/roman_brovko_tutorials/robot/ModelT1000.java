@@ -3,11 +3,31 @@ package com.roman_brovko_tutorials.robot;
 import com.roman_brovko_tutorials.interfaces.Hand;
 import com.roman_brovko_tutorials.interfaces.Head;
 import com.roman_brovko_tutorials.interfaces.Leg;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+@Qualifier("t1000")
 public class ModelT1000 extends BaseModel {
     private String color;
     private int year;
     private boolean soundEnabled;
+
+    @Bean
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public ModelT1000 model1() {
+        return new ModelT1000();
+    }
+
+    @Bean
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public ModelT1000 model2() {
+        return new ModelT1000("black", 2005, true);
+    }
 
     public ModelT1000() {
     }

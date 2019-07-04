@@ -7,11 +7,12 @@ import com.roman_brovko_tutorials.interfaces.Robot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Component;
 
 public abstract class BaseModel implements Robot {
 
     @Autowired
-    @Qualifier("sonyGoldenHand")
+    @Qualifier("silverHand")
     private Hand hand;
 
     @Autowired(required = false)

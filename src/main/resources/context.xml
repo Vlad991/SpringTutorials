@@ -1,38 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:context="http://www.springframework.org/schema/context"-->
+<!--       xmlns:util="http://www.springframework.org/schema/util"-->
+<!--       xmlns:p="http://www.springframework.org/schema/p"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--        http://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--        http://www.springframework.org/schema/context-->
+<!--        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">-->
 
 
-    <context:annotation-config />
+<!--    <context:annotation-config/>-->
+<!--    <context:component-scan base-package="com.roman_brovko_tutorials"/>-->
 
-    <bean id="t1000"
-          class="com.roman_brovko_tutorials.robot.ModelT1000"
-          scope="prototype">
-
-    </bean>
-
-    <bean class="com.roman_brovko_tutorials.sony.SonyHand">
-        <property name="color" value="golden"/>
-        <qualifier value="sonyGoldenHand"/>
-    </bean>
-    <bean class="com.roman_brovko_tutorials.sony.SonyHand">
-        <property name="color" value="bronze"/>
-        <qualifier value="sonyBronzeHand"/>
-    </bean>
-    <bean id="sonyLeg" class="com.roman_brovko_tutorials.sony.SonyLeg" />
-    <bean id="sonyHead" class="com.roman_brovko_tutorials.sony.SonyHead" />
-
-    <bean id="toshibaHand" class="com.roman_brovko_tutorials.toshiba.ToshibaHand" autowire-candidate="false"/>
-    <bean id="toshibaLeg" class="com.roman_brovko_tutorials.toshiba.ToshibaLeg" autowire-candidate="false"/>
-    <bean id="toshibaHead" class="com.roman_brovko_tutorials.toshiba.ToshibaHead" autowire-candidate="false"/>
-
-    <bean id="databaseBean" class="com.roman_brovko_tutorials.database.Database"/>
-
-</beans>
+<!--</beans>-->
