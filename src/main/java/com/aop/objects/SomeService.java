@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class SomeService {
 
-    public int getIntValue() {
+    public Integer getIntValue() {
         System.out.println("SomeService.getIntValue()");
         return 5;
     }
 
-    public double getDoubleValue() {
+    public Double getDoubleValue() {
         System.out.println("SomeService.getDoubleValue()");
         return 5.6;
     }

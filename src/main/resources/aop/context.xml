@@ -11,21 +11,22 @@
         https://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:component-scan base-package="com.aop.*"/>
+    <aop:aspectj-autoproxy/>
 
-    <aop:config>
-        <aop:aspect id="log" ref="myLogger">
-            <aop:pointcut id="getValue" expression="execution(* com.aop.objects.SomeService.getDoubleValue(..))"/>
-            <aop:before pointcut-ref="getValue" method="init"/>
-            <aop:after pointcut-ref="getValue" method="close"/>
-            <aop:after-returning pointcut-ref="getValue" returning="obj" method="printValue"/>
-        </aop:aspect>
+<!--    <aop:config>-->
+<!--        <aop:aspect id="log" ref="myLogger">-->
+<!--            <aop:pointcut id="getValue" expression="execution(* com.aop.objects.SomeService.getDoubleValue(..))"/>-->
+<!--            <aop:before pointcut-ref="getValue" method="init"/>-->
+<!--            <aop:after pointcut-ref="getValue" method="close"/>-->
+<!--            <aop:after-returning pointcut-ref="getValue" returning="obj" method="printValue"/>-->
+<!--        </aop:aspect>-->
 
-        <aop:aspect id="exception" ref="myException">
-            <aop:pointcut id="getDivision" expression="execution(* com.aop.objects.SomeService.getFractionOfDivision(..))"/>
-            <aop:before pointcut-ref="getDivision" method="init"/>
-            <aop:after pointcut-ref="getDivision" method="close"/>
-            <aop:after-throwing pointcut-ref="getDivision" throwing="exception" method="showException"/>
-        </aop:aspect>
-    </aop:config>
+<!--        <aop:aspect id="exception" ref="myException">-->
+<!--            <aop:pointcut id="getDivision" expression="execution(* com.aop.objects.SomeService.getFractionOfDivision(..))"/>-->
+<!--            <aop:before pointcut-ref="getDivision" method="init"/>-->
+<!--            <aop:after pointcut-ref="getDivision" method="close"/>-->
+<!--            <aop:after-throwing pointcut-ref="getDivision" throwing="exception" method="showException"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
 
 </beans>

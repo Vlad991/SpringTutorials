@@ -10,6 +10,6 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("aop/context.xml");
         SomeService service = context.getBean("someService", SomeService.class);
         double val = service.getDoubleValue();
-        int result = service.getFractionOfDivision(1, 1);
+        int result = service.getFractionOfDivision(1, 0);
     }
 }
